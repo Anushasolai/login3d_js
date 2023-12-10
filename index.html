@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="path"></div>
+            <div class="form" id="form">
+                <h1>Login</h1><br><br>
+                <label>Username</label><br><br>
+                <input type="text"><br><br>
+                <label>Password</label><br><br>
+                <input type="password"><br><br>
+                <button id="button">SignIn</button>
+            </div>
+            <img src="images/vecteezy_man-working-with-computer-at-desk_.jpg"id="man">
+            <img src="images/png-transparent-youtube-subscribe-thumbnail.png"id="youtube">
+            <h2 id="head">FRONTEND FOREVER</h2>
+        </div>
+    </div>
+   <script>
+    const box = document.querySelector('.box');
+const container = document.querySelector('.container');
+const head = document.querySelector('.head');
+const man = document.querySelector('#man');
+const youtube = document.querySelector('#youtube');
+const form = document.querySelector('#form');
+
+
+container.addEventListener("mousemove", (e)=>{
+    let horizontal = (window.innerWidth / 2 - e.pageX) / 10;
+    let vertical = (window.innerHeight / 2 - e.pageY)/10;
+    box.style.transform =`rotateX(${vertical}deg) rotateY(${horizontal}deg)`;
+});
+
+container.addEventListener("mouseenter",(e)=>{
+   box.style.transition =".1s";
+   head.style.transform = "translateZ(120px)";
+   man.style.transform = "translateZ(120px)";
+   youtube.style.transform = "translateZ(120px)";
+   form.style.transform = "translateZ(120px)";
+});
+container.addEventListener("mouseleave",(e)=>{
+    box.style.transition =".1s";
+   box.style.transform="rotateY(0deg) rotateX(0deg)";
+});
+
+
+   </script>
+
+    
+    
+</body>
+</html>
